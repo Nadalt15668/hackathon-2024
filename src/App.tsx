@@ -1,13 +1,11 @@
 import { RouterProvider } from "react-router-dom";
-import "./App.css";
 import router from "./router";
-import Register from "./routes/Register/Register";
+import "./variables.scss";
 
 function App() {
   return (
     <>
-      {/* <RouterProvider router={router} /> */}
-      <Register />
+      <RouterProvider router={router} />
     </>
   );
 }
