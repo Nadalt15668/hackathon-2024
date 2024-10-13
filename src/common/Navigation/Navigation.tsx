@@ -4,7 +4,7 @@ import "./Navigation.scss";
 function Navigation() {
   return (
     <AppBar className="navigation">
-      <Typography>מיתנדו"ה</Typography>
+      <Typography variant="h3">מיתנדו"ה</Typography>
     </AppBar>
   );
 }
