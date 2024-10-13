@@ -1,5 +1,5 @@
 import { Stack, Typography } from "@mui/material";
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 type DateProps = {
   date: Date;
 };
@@ -7,9 +7,13 @@ type DateProps = {
 const Date = ({ date }: DateProps) => {
   return (
     <Stack direction="row" alignItems="center" spacing={1}>
-      <CalendarToday sx={{ fontSize: 20, color: "rgb(147,197,253)" }} />
+      <CalendarMonthIcon className="date-icon" />
       <Typography variant="h6" color="white">
-        {eventData.date}
+        {date.toLocaleDateString("he-IL", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
       </Typography>
     </Stack>
   );

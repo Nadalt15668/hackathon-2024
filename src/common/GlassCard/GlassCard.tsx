@@ -1,11 +1,15 @@
-import { Card as MuiCard } from "@mui/material";
-import "./Card.scss";
+import { Card as MuiCard, Stack } from "@mui/material";
+import "./GlassCard.scss";
 import { PropsWithChildren } from "react";
 
 type CardProps<TProps> = PropsWithChildren<TProps>;
 
-const GlassCard = <TProps,>({}: CardProps<TProps>) => {
-  return <MuiCard className="glass-card" elevation={1} />;
+const GlassCard = <TProps,>({ children }: CardProps<TProps>) => {
+  return (
+    <MuiCard className="glass-card" elevation={1}>
+      <Stack>{children}</Stack>
+    </MuiCard>
+  );
 };
 
 export default GlassCard;
