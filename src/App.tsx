@@ -1,14 +1,11 @@
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider } from "@mui/material";
+import { Toaster } from "react-hot-toast";
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
+import theme from "./theme";
 import "./variables.scss";
-import { Toaster } from "react-hot-toast";
 
 function App() {
-  const theme = createTheme({
-    direction: "rtl",
-  });
-
   return (
     <>
       <ThemeProvider theme={theme}>
