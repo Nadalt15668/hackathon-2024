@@ -30,7 +30,9 @@ function CreateEvent() {
 
   const getDisplayTime = () => {
     const displayTime = new Date(event.time);
-    displayTime.setMinutes(displayTime.getMinutes() - displayTime.getTimezoneOffset());
+    displayTime.setMinutes(
+      displayTime.getMinutes() - displayTime.getTimezoneOffset()
+    );
 
     return displayTime.toISOString().slice(0, 16);
   };
@@ -152,6 +154,7 @@ function CreateEvent() {
               exclusive
               value={event.urgency}
               onChange={(event, urgency: EventUrgency) =>
+                urgency &&
                 setEvent((prev) => {
                   return {
                     ...prev,
@@ -160,9 +163,13 @@ function CreateEvent() {
                 })
               }
             >
-              <ToggleButton value={"critical" as EventUrgency}>קריטי</ToggleButton>
+              <ToggleButton value={"critical" as EventUrgency}>
+                קריטי
+              </ToggleButton>
               <ToggleButton value={"high" as EventUrgency}>גבוה</ToggleButton>
-              <ToggleButton value={"medium" as EventUrgency}>בינוני</ToggleButton>
+              <ToggleButton value={"medium" as EventUrgency}>
+                בינוני
+              </ToggleButton>
               <ToggleButton value={"low" as EventUrgency}>נמוך</ToggleButton>
             </ToggleButtonGroup>
             <Typography>דחיפות</Typography>
