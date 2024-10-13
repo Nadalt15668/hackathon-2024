@@ -1,0 +1,7 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - var(--height__navigation));
+  padding-block-start: var(--height__navigation);
+}
