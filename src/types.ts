@@ -42,3 +42,4 @@ export type Event = {
   time: Date;
   urgency: EventUrgency;
 };
+

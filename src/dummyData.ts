@@ -1,6 +1,6 @@
 import { Volunteer, Event } from "./types";
 
-const volunteers: Volunteer[] = [
+export const volunteers: Volunteer[] = [
   {
     id: "vol1",
     firstName: "John",
@@ -31,7 +31,7 @@ const volunteers: Volunteer[] = [
   },
 ];
 
-const events: Event[] = [
+export const events: Event[] = [
   {
     id: "event1",
     description: "Car accident at Main St.",
