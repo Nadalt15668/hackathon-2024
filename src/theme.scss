@@ -1,0 +1,102 @@
+.cool-orange-button {
+  padding: 0.75rem 1.5rem;
+  background-image: linear-gradient(to right, #fb923c, #ea580c);
+  color: white;
+  font-weight: bold;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #fdba74;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cool-orange-button:hover {
+  background-image: linear-gradient(to right, #f97316, #c2410c);
+  transform: scale(1.05);
+  border-color: #fb923c;
+}
+
+.cool-orange-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.5);
+}
+
+/* Optional: Add some basic reset styles */
+.cool-orange-button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* Styles for MUI TextField (unchanged) */
+.orange-theme-textfield .MuiOutlinedInput-root {
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.orange-theme-textfield .MuiOutlinedInput-notchedOutline {
+  border-color: #fb923c;
+}
+
+.orange-theme-textfield:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #ea580c;
+}
+
+.orange-theme-textfield .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ea580c;
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.5);
+}
+
+.orange-theme-textfield .MuiInputLabel-outlined {
+  color: #ea580c;
+}
+
+.orange-theme-textfield .MuiInputLabel-outlined.Mui-focused {
+  color: #c2410c;
+}
+
+.orange-theme-textfield .MuiOutlinedInput-input {
+  color: #333;
+}
+
+/* Updated Styles for MUI ToggleButtonGroup */
+.orange-theme-togglebutton-group {
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+  border: 1px solid #fb923c !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root {
+  border: none !important;
+  color: #ea580c !important;
+  transition: all 0.3s ease-in-out !important;
+  background-color: transparent !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root:hover {
+  background-color: rgba(251, 146, 60, 0.1) !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root.Mui-selected {
+  background-image: linear-gradient(to right, #fb923c, #ea580c) !important;
+  color: white !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root.Mui-selected:hover {
+  background-image: linear-gradient(to right, #f97316, #c2410c) !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root:first-of-type {
+  border-top-left-radius: 9999px !important;
+  border-bottom-left-radius: 9999px !important;
+}
+
+.orange-theme-togglebutton-group .MuiToggleButton-root:last-of-type {
+  border-top-right-radius: 9999px !important;
+  border-bottom-right-radius: 9999px !important;
+}

@@ -11,6 +11,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import Page from "../../../common/Page/Page";
 import { Event, EventUrgency } from "../../../types";
+import "./CreateEvent.scss";
 
 function CreateEvent() {
   const [isLoading, setIsLoading] = useState(false);
@@ -67,9 +68,7 @@ function CreateEvent() {
           alignItems: "center",
         }}
       >
-        <Typography marginBottom={"2.5rem"} fontSize={"8rem"}>
-          יצירת אירוע
-        </Typography>
+        <Typography className="orange-theme-title">יצירת אירוע</Typography>
         <div
           style={{
             display: "flex",
@@ -155,6 +154,7 @@ function CreateEvent() {
               exclusive
               value={event.urgency}
               onChange={(event, urgency: EventUrgency) =>
+                urgency &&
                 setEvent((prev) => {
                   return {
                     ...prev,

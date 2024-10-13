@@ -1,3 +1,8 @@
 .navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: var(--height__navigation);
+  padding-inline: 1rem;
+  color: white;
 }
