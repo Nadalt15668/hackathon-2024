@@ -1,30 +1,31 @@
+import { Box, Button } from "@mui/material";
 import React from "react";
-import { RegistrationStep } from "../RegistrationStepper";
-import { Box, Button, Typography } from "@mui/material";
+import { Step } from "../Stepper";
 
-type RegistrationStepperFotterProps = {
-    activeStep: RegistrationStep;
-    steps: RegistrationStep[];
+type StepperFotterProps = {
+    activeStep: Step;
+    steps: Step[];
     handleSkip: () => void;
     handleFinish: () => void;
     handleBack: () => void;
     handleNext: () => void;
-    isStepOptional: (step: RegistrationStep) => boolean;
+    isStepOptional: (step: Step) => boolean;
+    getStepIndex: (step: Step) => number
 }
 
-export default function RegistrationStepperFotter({ activeStep, steps, handleBack, handleSkip, handleFinish, handleNext, isStepOptional }: RegistrationStepperFotterProps) {
+export default function StepperFotter({ activeStep, steps, handleBack, handleSkip, handleFinish, handleNext, isStepOptional, getStepIndex }: StepperFotterProps) {
     return (
         <React.Fragment>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
                 <Button
                     color="inherit"
-                    disabled={activeStep.stepIndex === 0}
+                    disabled={getStepIndex(activeStep) === 0}
                     onClick={handleBack}
                     sx={{ mr: 1 }}
                 >
                     Back
                 </Button>
-                {activeStep.stepIndex === steps[steps.length - 1].stepIndex ? (
+                {getStepIndex(activeStep) === getStepIndex(steps[steps.length - 1]) ? (
                     <>
                         <Box sx={{ flex: '1 1 auto' }} />
                         <Button onClick={handleFinish}>Finish</Button>
@@ -39,7 +40,7 @@ export default function RegistrationStepperFotter({ activeStep, steps, handleBac
                             </Button>
                         )}
                         <Button onClick={handleNext}>
-                            {activeStep.stepIndex === steps.length - 1 ? 'Finish' : 'Next'}
+                            {getStepIndex(activeStep) === steps.length - 1 ? 'Finish' : 'Next'}
                         </Button>
                     </>
                 )
