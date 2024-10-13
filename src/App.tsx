@@ -1,13 +1,13 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
 import router from "./router";
-import { Typography } from "@mui/material";
+import Register from "./routes/Register/Register";
 
 function App() {
   return (
     <>
-      <RouterProvider router={router} />
-      <Typography />
+      {/* <RouterProvider router={router} /> */}
+      <Register />
     </>
   );
 }
