@@ -24,6 +24,7 @@ export type Volunteer = {
   lastName: string;
   role: VolunteerRole[];
   isActive: boolean;
+  birthCity: string;
 };
 
 export type Requiry = {
