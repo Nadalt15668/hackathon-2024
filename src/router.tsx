@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./common/Root/Root";
 import CreateEvent from "./routes/CreateEvent/components/CreateEvent";
-import Register from "./routes/Register/Register";
+import VolunteerRegister from "./routes/Register/VolunteerRegister";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
         element: <CreateEvent />,
       },
       {
-        path: "/volunteerRegister",
-        element: <Register />,
+        path: "/volunteer-register",
+        element: <VolunteerRegister />,
       }
     ],
   },

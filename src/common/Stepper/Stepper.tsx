@@ -11,7 +11,7 @@ export type Step = {
 }
 
 type StepperProps = {
-    steps: Step[]
+    steps: Step[],
 }
 
 export default function Stepper({ steps }: StepperProps) {
@@ -61,7 +61,7 @@ export default function Stepper({ steps }: StepperProps) {
     };
 
     return (
-        <Box width='70rem' height='40rem' boxSizing='border-box'>
+        <Box width='70rem' height='40rem' boxSizing='border-box' sx={{ direction: 'rtl', mt: 2 }}>
             <StepperHeader steps={steps} getStepIndex={getStepIndex} isStepOptional={isStepOptional} isStepSkipped={isStepSkipped} activeStep={activeStep} />
             {activeStep.stepComponent}
             <StepperFotter steps={steps} activeStep={activeStep} isStepOptional={isStepOptional} handleBack={handleBack} handleNext={handleNext} handleFinish={handleFinish} handleSkip={handleSkip} getStepIndex={getStepIndex} />
