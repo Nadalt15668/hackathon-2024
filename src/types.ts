@@ -1,4 +1,12 @@
-export type RoleName = "paramedic" | "first-aid-applier" | "rescuer";
+export const roleNames = [
+  "paramedic",
+  "first-aid-applier",
+  "rescuer",
+  "firefighter",
+  "nurse",
+] as const;
+
+export type RoleName = (typeof roleNames)[number];
 export type EventUrgency = "low" | "medium" | "high" | "critical";
 
 export type Role = {

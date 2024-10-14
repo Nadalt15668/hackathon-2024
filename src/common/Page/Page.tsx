@@ -10,8 +10,8 @@ function Page({ children }: PageProps) {
       className="page"
       sx={{
         backgroundColor: (theme) => theme.palette.background.default,
-      }}
-    >
+        // backgroundColor: (theme) => "black",
+      }}>
       {children}
     </Box>
   );
