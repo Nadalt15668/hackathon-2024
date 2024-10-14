@@ -6,8 +6,10 @@ type CardProps<TProps> = PropsWithChildren<TProps>;
 
 const GlassCard = <TProps,>({ children }: CardProps<TProps>) => {
   return (
-    <MuiCard className="glass-card" elevation={1}>
-      <Stack>{children}</Stack>
+    <MuiCard className="glass-card">
+      <Stack justifyContent={"center"} alignItems={"center"}>
+        {children}
+      </Stack>
     </MuiCard>
   );
 };

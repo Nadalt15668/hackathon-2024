@@ -1,4 +1,4 @@
-import Paper from "@mui/material/Paper";
+import { Box } from "@mui/material";
 import "./ChipList.scss";
 
 type ChipListProps<TData> = {
@@ -8,9 +8,9 @@ type ChipListProps<TData> = {
 
 const ChipList = <TData,>({ chipList, render }: ChipListProps<TData>) => {
   return (
-    <Paper className="chip-list" component="ul">
+    <Box className="chip-list" component="ul">
       {chipList.map(render)}
-    </Paper>
+    </Box>
   );
 };
 

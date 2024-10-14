@@ -1,26 +1,42 @@
-import Page from "../../../common/Page/Page";
+import { Box, styled, Typography } from "@mui/material";
 import GlassCard from "../../../common/GlassCard/GlassCard";
 import { type Event } from "../../../types";
 import Date from "./Date/Date";
 import UrgencyWrapper from "./UrgencyBadge/UrgencyWrapper";
 import RolesList from "../../RolesList/RoleList";
 import Address from "./Address/Address";
+import { useNavigate } from "react-router-dom";
+import "./EventCard.scss";
 
 export type EventCardProps = {
-  event: Omit<Event, "id">;
+  event: Event;
 };
 
 const EventCard = ({ event }: EventCardProps) => {
+  const navigate = useNavigate();
+  const ThemedTypography = styled(Typography)(({ theme }) => ({
+    color: theme.palette.primary.main,
+  }));
+
+  const handleClick = (eventId: Event["id"]) => {
+    navigate(`/event-overview/${eventId}`);
+  };
+
   return (
-    <Page>
-      <UrgencyWrapper urgency={event.urgency}>
+    <UrgencyWrapper urgency={event.urgency}>
+      <Box className="event-card">
         <GlassCard>
-          <Date date={event.time} />
-          <RolesList roles={event.requires} />
-          <Address address={event.location} />
+          <Box onClick={() => handleClick(event.id)}>
+            <ThemedTypography variant="h4">
+              {event.description}
+            </ThemedTypography>
+            <Date date={event.time} />
+            <RolesList roles={event.requires} />
+            <Address address={event.location} />
+          </Box>
         </GlassCard>
-      </UrgencyWrapper>
-    </Page>
+      </Box>
+    </UrgencyWrapper>
   );
 };
 

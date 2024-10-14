@@ -29,6 +29,86 @@ export const volunteers: Volunteer[] = [
     ],
     isActive: false,
   },
+  {
+    id: "vol3",
+    firstName: "Mike",
+    lastName: "Johnson",
+    role: [
+      {
+        role: { name: "rescuer" },
+        isVerified: true,
+      },
+      {
+        role: { name: "first-aid-applier" },
+        isVerified: true,
+      },
+    ],
+    isActive: true,
+  },
+  {
+    id: "vol4",
+    firstName: "Emily",
+    lastName: "Davis",
+    role: [
+      {
+        role: { name: "paramedic" },
+        isVerified: true,
+      },
+    ],
+    isActive: false,
+  },
+  {
+    id: "vol5",
+    firstName: "David",
+    lastName: "Wilson",
+    role: [
+      {
+        role: { name: "firefighter" },
+        isVerified: false,
+      },
+    ],
+    isActive: true,
+  },
+  {
+    id: "vol6",
+    firstName: "Sophia",
+    lastName: "Miller",
+    role: [
+      {
+        role: { name: "nurse" },
+        isVerified: true,
+      },
+    ],
+    isActive: true,
+  },
+  {
+    id: "vol7",
+    firstName: "James",
+    lastName: "Brown",
+    role: [
+      {
+        role: { name: "rescuer" },
+        isVerified: true,
+      },
+      {
+        role: { name: "firefighter" },
+        isVerified: true,
+      },
+    ],
+    isActive: false,
+  },
+  {
+    id: "vol8",
+    firstName: "Linda",
+    lastName: "Garcia",
+    role: [
+      {
+        role: { name: "first-aid-applier" },
+        isVerified: true,
+      },
+    ],
+    isActive: true,
+  },
 ];
 
 export const events: Event[] = [
@@ -39,7 +119,12 @@ export const events: Event[] = [
       streetName: "Main St.",
       streetNumber: 123,
     },
-    requires: [{ name: "paramedic" }, { name: "rescuer" }],
+    requires: [
+      { name: "paramedic" },
+      { name: "rescuer" },
+      { name: "firefighter" },
+      { name: "nurse" },
+    ],
     volunteers: [
       {
         volunteer: volunteers[0],
@@ -47,7 +132,35 @@ export const events: Event[] = [
       },
       {
         volunteer: volunteers[1],
-        isEventAccepted: false,
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[2],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[3],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[4],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[5],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[6],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[7],
+        isEventAccepted: true,
+      },
+      {
+        volunteer: volunteers[8],
+        isEventAccepted: true,
       },
     ],
     time: new Date("2024-10-15T14:30:00"),

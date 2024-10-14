@@ -1,15 +1,13 @@
 import EventGrid from "../../../components/EventGrid";
 import { events } from "../../../dummyData";
 import Page from "../../../common/Page/Page";
-import Card from "../../../common/GlassCard/GlassCard";
+import { useEvents, useGetEvents } from "../../../hooks";
 
 const EventsOverview = () => {
-  //todo: add context for events
+  const events = useGetEvents();
   return (
     <Page>
-      <Card>
-        <EventGrid events={events} />;
-      </Card>
+      <EventGrid events={events} />
     </Page>
   );
 };

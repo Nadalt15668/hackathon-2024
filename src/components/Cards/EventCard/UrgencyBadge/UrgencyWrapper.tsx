@@ -1,6 +1,7 @@
+import { PropsWithChildren } from "react";
 import { Badge } from "@mui/material";
 import { EventUrgency } from "../../../../types";
-import { PropsWithChildren } from "react";
+import "./UrgencyWrapper.scss";
 
 type UrgencyWrapperProps = PropsWithChildren & {
   urgency: EventUrgency;
@@ -9,13 +10,16 @@ type UrgencyWrapperProps = PropsWithChildren & {
 const urgencyColors: Record<EventUrgency, any> = {
   low: "success",
   medium: "warning",
-  high: "default",
+  high: "warning",
   critical: "error",
 };
 
 const UrgencyWrapper = ({ urgency, children }: UrgencyWrapperProps) => {
   return (
-    <Badge badgeContent={urgency} color={urgencyColors[urgency]}>
+    <Badge
+      badgeContent={urgency}
+      color={urgencyColors[urgency]}
+      classes={{ badge: "badge" }}>
       {children}
     </Badge>
   );
