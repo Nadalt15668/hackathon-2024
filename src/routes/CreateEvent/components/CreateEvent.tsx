@@ -11,9 +11,15 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import Page from "../../../common/Page/Page";
 import { Event, EventUrgency } from "../../../types";
+import RegistrationQualifications from "../../Register/RegistrationStepper.tsx/RegistrationQualifications/RegistrationQualifications";
+import { VolunteerInformation } from "../../Register/VolunteerRegister";
 import "./CreateEvent.scss";
 
 function CreateEvent() {
+  const [volunteerInformation, setVolunteerInformation] = useState<VolunteerInformation>({
+    ...({} as VolunteerInformation),
+    qualifications: [],
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [event, setEvent] = useState<Event>({
     id: "",
@@ -138,6 +144,10 @@ function CreateEvent() {
             value={getDisplayTime()}
             onChange={(event) => setTime(event.target.value)}
             type="datetime-local"
+          />
+          <RegistrationQualifications
+            setVolunteerInformation={setVolunteerInformation}
+            volunteerInformation={volunteerInformation}
           />
           <div
             style={{
